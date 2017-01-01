@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="top-header" layout="row" layout-align="start center">
+        <span ng-show="!vm.atTop" class="title home-title" >Ronnie's Board Games</span>
+        <md-input-container ng-show="!vm.atTop" class="search-bar" flex="60">
+            <label class="search-label">Search...</label>
+            <input ng-model="vm.gameSearch">
+        </md-input-container>
+        <md-button class="md-button md-icon-button admin-btn"
+            ng-click="vm.showLogin($event)">
+            <i class="material-icons">vpn_key </i>
+        </md-button>
+    </div>
+
+    <div class="search-container" layout="column" layout-align="center center" ng-show="vm.atTop">
+        <span class="title home-title">Reality Diverted Games</span>
+        <md-input-container class="search-bar">
+            <label class="search-label">Search...</label>
+            <input ng-model="vm.gameSearch" ng-change="vm.isSearching()" ng-model-options="{debounce: 1000}">
+        </md-input-container>
+    </div>
+
+    <div class="games-container" layout="row" layout-align="center center">
+        <md-card class="game-card" ng-repeat="game in vm.games | filter: vm.gameSearch | orderBy: game.title">
+            <md-card-header>
+                <md-card-avatar>
+                    <a ui-sref="gameInfo({id: game.gameId})"><img src="{{game.thumbnail}}"
+                                                                  ng-style="{'padding-bottom': '10px'}"/></a>
+                </md-card-avatar>
+                <md-card-header-text>
+                    <a ui-sref="gameInfo({id: game.gameId})"><span class="md-headline text-center">{{game.title}}</span></a>
+                </md-card-header-text>
+            </md-card-header>
+            <img ng-src="{{game.image}}" class="md-card-image card-image-container" alt="Washed Out">
+            <md-card-title>
+                <md-card-title-text>
+                    <star-rating rate="game.rating/2"></star-rating>
+                </md-card-title-text>
+            </md-card-title>
+        </md-card>
+    </div>
+</div>

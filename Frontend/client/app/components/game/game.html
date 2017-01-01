@@ -1,0 +1,62 @@
+<div ng-init="vm.init()" class="game-container" layout="column" layout-align="start start">
+    <div class="image-container" layout="column">
+        <img ng-src="{{vm.game.image}}" class="game-image">
+    </div>
+
+    <div class="game-top-header" layout="row" layout-align="start center">
+        <md-button class="md-button md-icon-button">
+            <i class="material-icons">keyboard_backspace</i>
+        </md-button>
+        <md-button class="md-button md-icon-button login-btn">
+            <i class="material-icons">vpn_key </i>
+        </md-button>
+    </div>
+
+    <div class="game-main-header" layout="row" layout-align="start center">
+        <div>
+            <img ng-src="{{vm.game.thumbnail}}" class="game-thumbnail">
+        </div>
+        <div layout="column">
+            <span class="game-title title">{{vm.game.title}}</span>
+            <star-rating rate="vm.rating"></star-rating>
+        </div>
+    </div>
+
+    <div class="game-main-content" layout="column" layout-align="start" layout-wrap>
+        <div layout="row" layout-align="space-around start">
+            <div class="game-content reading-font" layout="column" layout-align="start center" flex="50">
+                <md-card>
+                    <md-card-title>
+                        <h1>Description</h1>
+                    </md-card-title>
+                    <md-card-content class="">
+                        <p>
+                            {{vm.game.description}}
+                        </p>
+                    </md-card-content>
+                </md-card>
+            </div>
+
+            <div class="game-details" layout="column" layout-align="center center" flex="30">
+                details
+            </div>
+        </div>
+
+        <div class="game-instructions" layout="row" layout-align="space-around start">
+            <div class="game-instructions-wrapper" layout="column" layout-align="start center" flex="70">
+                <md-card>
+                    <md-card-title>
+                        <h1> How to play </h1>
+                    </md-card-title>
+                    <md-content>
+                        <iframe class="youtube-video" src="https://www.youtube.com/embed/ofZS29XArzM" frameborder="0" allowfullscreen></iframe>
+                    </md-content>
+                </md-card>
+            </div>
+        </div>
+
+        <div ng-if="vm.hasExpansions" class="game-expansions" layout="row">
+
+        </div>
+    </div>
+</div>

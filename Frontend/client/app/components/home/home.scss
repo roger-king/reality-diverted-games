@@ -1,0 +1,76 @@
+.top-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  background-color: #e57373;
+
+  .admin-btn {
+    position: fixed;
+    right: 10px;
+    color: white;
+    text-transform: lowercase;
+  }
+  .search-bar{
+    margin-top: 50px;
+    margin-left: 40px;
+    font-size: 1em !important;
+  }
+  .home-title {
+    font-size: 2.5em !important;
+  }
+}
+
+.search-container {
+  min-height: 100%;
+  min-width: 1024px;
+
+  /* Set up proportionate scaling */
+  width: 100%;
+  height: 100vh;
+
+  /* Set up positioning */
+  top: 0;
+  left: 0;
+
+  background-color: #e57373;
+
+}
+
+.home-title {
+  color: white;
+}
+.search-bar {
+  width: 60%;
+  .search-label {
+    font-size: 2em;
+    color: white;
+  }
+}
+md-input-container:not(.md-input-invalid).md-input-focused .md-input {
+  border-color: white;
+}
+
+.games-container {
+  display:block;
+  position: static;
+  flex-wrap: wrap-reverse;
+  padding-top: 100px;
+  margin: 20px;
+  overflow: hidden;
+  .game-card {
+    width: 500px;
+    height: auto;
+  }
+  .card-image-container {
+    width: 100%;
+    height: 500px;
+  }
+}
+.home-login-panel{
+  padding: 20px;
+  width: 250px;
+  background-color: #FAFAFA;
+  border-radius: 3px;
+}

@@ -1,0 +1,13 @@
+<div layout="column" layout-align="center center">
+  <h3> Login </h3>
+  <md-input-container>
+    <label>Name</label>
+    <input type="text" ng-model="vm.user" required>
+  </md-input-container>
+  <md-input-container>
+    <label>Password</label>
+    <input type="password" ng-model="vm.password" required>
+  </md-input-container>
+
+  <md-button class="md-primary md-raised" ng-click="vm.login(vm.user, vm.password)"> login </md-button>
+</div>

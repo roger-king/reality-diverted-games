@@ -1,0 +1,43 @@
+#navbar-container{
+  height:70px;
+  width:100%;
+  background: white;
+  padding-top: 10px;
+  padding-bottom:10px;
+}
+
+.title{
+  padding-left: 20px;
+}
+
+.navbar-menu{
+  font-size: 18px;
+}
+.action-btns{
+  position:absolute;
+  right:0;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding-left: 10px;
+  overflow: hidden;
+}
+
+li {
+  float: left;
+  height: inherit;
+}
+
+li a {
+  display: block;
+  text-align: center;
+  padding: 14px 16px;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+  cursor: pointer;
+  background-color: #FFDBCE;
+}

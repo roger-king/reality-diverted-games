@@ -1,0 +1,13 @@
+{
+  "host": "localhost",
+  "port": 3000,
+  "mongodb": "mongodb://localhost:27017/bg",
+  "public": "../public/",
+  "auth": {
+    "userEndpoint": "/api/users",
+    "token": {
+      "secret": "Uat2DtAKpnuQ8C9H4gX7YaR27y+41JT6E93K//Lw2hhMJVuCG4NXEF1gQWMCI0/W90wIGPzrYAIvzuSvUfocEw=="
+    },
+    "local": {}
+  }
+}
