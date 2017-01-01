@@ -4,10 +4,13 @@
     </div>
 
     <div class="game-top-header" layout="row" layout-align="start center">
-        <md-button class="md-button md-icon-button">
+        <md-button class="md-button md-icon-button back-btn"
+            ng-click="vm.goBack()">
             <i class="material-icons">keyboard_backspace</i>
         </md-button>
-        <md-button class="md-button md-icon-button login-btn">
+        <!-- TODO: Create a Search Field. Query and go back to home page.-->
+        <md-button class="md-button md-icon-button login-btn"
+            ng-click="vm.showLogin($event)">
             <i class="material-icons">vpn_key </i>
         </md-button>
     </div>
@@ -38,25 +41,45 @@
             </div>
 
             <div class="game-details" layout="column" layout-align="center center" flex="30">
-                details
+                <md-chips name="fruitName" readonly="ctrl.readonly"
+                          md-removable="false">
+                    <md-chip-template>
+                        <strong> <i class="material-icons">people_outline</i></strong>
+                        <em>{{vm.game.min_players}} - {{vm.game.max_players}}</em>
+                    </md-chip-template>
+                </md-chips>
             </div>
         </div>
 
-        <div class="game-instructions" layout="row" layout-align="space-around start">
-            <div class="game-instructions-wrapper" layout="column" layout-align="start center" flex="70">
+        <div layout="row" layout-align="space-around start">
+            <div class="game-expansions" layout="column" flex="30">
+                <div>
+                    <md-card>
+                        <md-card-title>
+                            <h1> Expansions </h1>
+                        </md-card-title>
+                        <md-content>
+                            <p>
+                            <div ng-if="!vm.hasExpansions">
+                                <h3>You don't own any.</h3>
+                            </div>
+                            </p>
+                        </md-content>
+                    </md-card>
+                </div>
+            </div>
+
+            <div class="game-instructions-wrapper" layout="column" layout-align="start center" flex="50">
                 <md-card>
                     <md-card-title>
                         <h1> How to play </h1>
                     </md-card-title>
                     <md-content>
-                        <iframe class="youtube-video" src="https://www.youtube.com/embed/ofZS29XArzM" frameborder="0" allowfullscreen></iframe>
+                        <iframe class="youtube-video" src="https://www.youtube.com/embed/ofZS29XArzM" frameborder="0"
+                                allowfullscreen></iframe>
                     </md-content>
                 </md-card>
             </div>
-        </div>
-
-        <div ng-if="vm.hasExpansions" class="game-expansions" layout="row">
-
         </div>
     </div>
 </div>

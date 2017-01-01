@@ -3,7 +3,6 @@ class HomeController {
   	'ngInject';
     let vm = this;
     vm.atTop = true;
-    vm._mdPanel = $mdPanel;
     BoardGameFactory.find().then(function(response){
     	console.log(response.data.data);
     	vm.games = response.data.data;
@@ -19,6 +18,7 @@ class HomeController {
         }
     };
     vm.showLogin = (ev) => {
+        vm._mdPanel = $mdPanel;
         let position = vm._mdPanel.newPanelPosition()
             .relativeTo('.admin-btn')
             .addPanelPosition(vm._mdPanel.xPosition.OFFSET_START, vm._mdPanel.yPosition.BELOW);
