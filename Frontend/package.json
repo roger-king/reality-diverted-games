@@ -12,6 +12,7 @@
         "angular-messages": "^1.5.3",
         "angular-sanitize": "^1.6.0",
         "angular-ui-router": "^0.3.2",
+        "angular-filter": "^0.5.14",
         "jwt-decode": "^2.1.0",
         "normalize.css": "^3.0.3"
     },
